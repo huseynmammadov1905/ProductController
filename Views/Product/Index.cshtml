@@ -1,0 +1,30 @@
+﻿@model List<Product>
+
+
+        <div class="d-flex in Model">
+        
+            @foreach (var item in Model)
+            {
+                <div class="card" style="width:20rem;">
+                    <p>@item.Id</p>
+                    <img src="@item.ImageUrl" class="card-img-top" alt="image">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text">@item.Price</p>
+                       
+                      
+                    </div>
+                    <div class="card">
+                    <a href="@Url.Action("Delete","Product", new {id = item.Id})" class="card-link">Delete</a>
+
+                    <a href="@Url.Action("EditProduct","Product", new {id = item.Id})" class="card-link">Edit</a>
+
+                    </div>
+                   
+                </div>
+            }
+        </div>
+    
+
+<h1>Product</h1>
